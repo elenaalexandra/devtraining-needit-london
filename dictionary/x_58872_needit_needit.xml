@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="omit_sys_original=true" default="0" label="New Currency" max_length="20" name="u_currency_1" type="currency"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="unu" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="unu" sequence="0" value="unu"/>
+                <element inactive_on_update="false" label="doi" sequence="1" value="doi"/>
+                <element inactive_on_update="false" label="trei" sequence="2" value="trei"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="unu unu" label="What neede" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element inactive_on_update="false" label="unu unu" sequence="0" value="unu unu"/>
+                <element inactive_on_update="false" label="unu doi" sequence="1" value="unu doi"/>
+                <element inactive_on_update="false" label="doi unu" sequence="2" value="doi unu"/>
+                <element inactive_on_update="false" label="doi doi" sequence="3" value="doi doi"/>
+                <element inactive_on_update="false" label="trei unu" sequence="4" value="trei unu"/>
+                <element inactive_on_update="false" label="trei doi" sequence="5" value="trei doi"/>
+            </choice>
+        </element>
+        <element label="When needed" max_length="40" name="u_when_needed" type="glide_date_time"/>
+        <index name="index">
+            <element name="u_requested_for"/>
+        </index>
+    </element>
+</database>
